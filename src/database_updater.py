@@ -1,11 +1,11 @@
 from peewee import *
-from weather_maker_yandex import WeatherMaker, WeatherDayDescription
+from src.weather_maker_yandex import WeatherMaker, WeatherDayDescription
 from datetime import datetime, date, timedelta
 
 
 class SingletonMeta(type):
 
-    DATABASE_PATH = 'test.db'
+    DATABASE_PATH = '../test.db'
     _instances = {}
 
     def __call__(cls, *args, **kwargs):

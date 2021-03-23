@@ -3,7 +3,7 @@ from PIL import Image, ImageDraw, ImageFont
 import numpy as np
 import re
 from datetime import datetime, date
-from weather_maker_yandex import WeatherMaker, WeatherDayDescription
+from src.weather_maker_yandex import WeatherMaker, WeatherDayDescription
 
 
 YELLOW = (0, 255, 255)
@@ -21,25 +21,25 @@ class WeatherState:
 
 
 IMAGE_FOR_FORECAST = {
-    'sun': WeatherState(path='weather_img/sun.jpg',
+    'sun': WeatherState(path='../weather_img/sun.jpg',
                         patterns=['солн', 'ясн'],
                         background_gradient=(YELLOW, WHITE)),
-    'cloud': WeatherState(path='weather_img/cloud.jpg',
+    'cloud': WeatherState(path='../weather_img/cloud.jpg',
                           patterns=['обл', 'пасм'],
                           background_gradient=(GRAY, WHITE)),
-    'rain': WeatherState(path='weather_img/rain.jpg',
+    'rain': WeatherState(path='../weather_img/rain.jpg',
                          patterns=['дожд'],
                          background_gradient=(DARK_BLUE, WHITE)),
-    'snow': WeatherState(path='weather_img/snow.png',
+    'snow': WeatherState(path='../weather_img/snow.png',
                          patterns=['сне', 'метел'],
                          background_gradient=(BLUE, WHITE))
 }
 
 
 class ImageMaker:
-    PATH_TO_POSTCARD = 'weather_img/postcard.jpg'
-    PATH_TO_FONT = 'fonts/20016.ttf'
-    PATH_TO_FONT_FOR_TEMPERATURE = 'fonts/DejaVu_Sans_Mono_Nerd_Font_Complete.ttf'
+    PATH_TO_POSTCARD = '../weather_img/postcard.jpg'
+    PATH_TO_FONT = '../fonts/20016.ttf'
+    PATH_TO_FONT_FOR_TEMPERATURE = '../fonts/DejaVu_Sans_Mono_Nerd_Font_Complete.ttf'
 
     def create_weather_card(self, date_, forecast: WeatherDayDescription):
         postcard_img = cv2.imread(self.PATH_TO_POSTCARD)

@@ -1,7 +1,7 @@
-from weather_maker_yandex import WeatherMaker
-from database_updater import DataBaseHandler
+from src.weather_maker_yandex import WeatherMaker
+from src.database_updater import DataBaseHandler
 from datetime import timedelta, date
-from image_maker import ImageMaker
+from src.image_maker import ImageMaker
 
 
 class WeatherHandler:

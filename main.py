@@ -1,5 +1,5 @@
 import argparse
-from weather_handler import WeatherHandler
+from src.weather_handler import WeatherHandler
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Weather forecast')
